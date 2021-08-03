@@ -1,79 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import pic from "./assets/favicon.png"
+import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+
 
 export default function App() {
-  const menus = [
-    {
-      _id: "5f1c2cf788c5e8bfc63e85d4",
-      title: "Electronics",
-      parent: "/",
-      category: "/electronics"
-    },
-    {
-      _id: "5f1c2d0e88c5e8bfc63e85d5",
-      title: "Headphones",
-      parent: "/electronics",
-      category: "/electronics/headphones"
-    },
-    {
-      _id: "5f1c2d1888c5e8bfc63e85d6",
-      title: "Television",
-      parent: "/electronics",
-      category: "/electronics/television"
-    },
-  {
-      _id: "5f1c2d2088c5e8bfc63e85d7",
-      title: "Mobile",
-      parent: "/electronics",
-      category: "/electronics/mobiles"
-    },
-    {
-      _id: "5f1c2d4288c5e8bfc63e85d8",
-      title: "Samsung",
-      parent: "/electronics/mobiles",
-      category: "/electronics/mobiles/samsung"
-    },
-    {
-      _id: "5f1c2d4288c5e8bfc63e85d8",
-      title: "Redmi",
-      parent: "/electronics/mobiles",
-      category: "/electronics/mobiles/redmi"
-    },
-  {
-      _id: "5f1c2cf788c5e8bfc63e85d4",
-      title: "Fashion",
-      parent: "/",
-      category: "/fashion"
-    },
-    {
-      _id: "5f1c2cf788c5e8bfc63e85d4",
-      title: "Men",
-      parent: "/fashion",
-      category: "/fashion/men"
-    },
-    {
-      _id: "5f1c2cf788c5e8bfc63e85d4",
-      title: "Women",
-      parent: "/fashion",
-      category: "/fashion/women"
-    }
-    
-  ];
+  
    
   return (
     <View style={styles.container}>
-      <Image source = {pic}  />
-      <Text >
-        {menus.map(menu => 
-          <Text >
-            {menu.parent == "/electronics"}
-          </Text>
-        )}
+      <View style = {styles.carContainer} > 
+      {/* <ImageBackground source = {require('./assets/images/logo.png')}  /> */}
+      <ImageBackground source = {require('./assets/images/ModelX.jpeg')} 
+      style = {styles.image}
+      />
+      <View style = {styles.titles} >
+        <Text style = {styles.title} >Model S</Text>
+        <Text style = {styles.subTitle }>Starting at $69,216</Text>
+      </View>
 
-      </Text>
-      <StatusBar style="auto" />
+      </View>
     </View>
   );
 }
@@ -86,4 +31,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     color: 'white'
   },
+  carContainer: {
+    width: '100%',
+    height: "100%"
+  },
+  titles: {
+    marginTop: '30%',
+    width: '100%',
+    alignItems: 'center'
+  },
+  title: {
+    fontSize: 40,
+    fontWeight: '500',
+  },
+  subTitle: {
+    fontSize: 16,
+    color: "gray"
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'contain',
+    position: 'absolute'
+  },
+  
 });
